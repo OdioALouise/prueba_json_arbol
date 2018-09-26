@@ -18,7 +18,7 @@ function Arbol(dict, profundidad) {
     var lista = [];  
     for (var key in dict) {
         if( isDict(dict[key]) ){
-           lista.push( Jacinto(dict[key], profundidad + 1) )
+           lista.push( Arbol(dict[key], profundidad + 1) )
         }
         else{
            lista.push(dict[key])
