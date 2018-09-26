@@ -14,11 +14,11 @@ function isDict(v) {
 }
 
 
-function Arbol(dict, profundidad) {
+function Arbol(dict) {
     var lista = [];  
     for (var key in dict) {
         if( isDict(dict[key]) ){
-           lista.push( Arbol(dict[key], profundidad + 1) )
+           lista.push( Arbol( dict[key] ) )
         }
         else{
            lista.push(dict[key])
@@ -28,7 +28,7 @@ function Arbol(dict, profundidad) {
     const listItems = lista.map((elemento) =>
       <li onClick={()=>{console.log("click")}}>{elemento}</li>
     );
-  return <ul id={"profu" + profundidad} style={{listStyleType: "none"}}>{listItems}</ul>;
+  return <ul style={{listStyleType: "none"}}>{listItems}</ul>;
 }
 
 
@@ -48,13 +48,13 @@ export default class Recorrida extends React.Component {
         key31: "Mas o que salva a humanidade",
         key32:{
           key321:"É que não há quem cure a curiosidade",
-          key322:"A curi, a curi"        
-        }
-      }
+          key322:"A curi, a curi",       
+        },
+      },
     }
  
     return (
-        <Arbol dict={json} profundidad={0} />
+        <Arbol dict={json} />
     );
   }
 }
