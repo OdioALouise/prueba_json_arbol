@@ -1,5 +1,6 @@
 import React from 'react';
 import SimpleCounter from './SimpleCounter';
+import SanchoPanza from './SanchoPanza';
 
 export default class HelloWorld extends React.Component {
   render() {
@@ -7,6 +8,7 @@ export default class HelloWorld extends React.Component {
       <div>
         <p>Hello world!</p>
         <SimpleCounter />
+        <SanchoPanza />
       </div>
     );
   }

@@ -1,3 +1,13 @@
+# Don't check auto-generated stuff into git
+dist
 node_modules
-lib
-public/js/bundle.js
+
+# Cruft
+.DS_Store
+npm-debug.log
+.idea
+yarn\.lock
+yarn-error.log
+
+# Exclude secrets
+.env
